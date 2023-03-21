@@ -9,6 +9,7 @@ jobs:
     - name: Hello message
       run: echo "Hello world"
   build:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-dotnet@v3
@@ -16,6 +17,7 @@ jobs:
         dotnet-version: '6.0.x'
       run: dotnet build
   test:
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-dotnet@v3
@@ -23,6 +25,8 @@ jobs:
         dotnet-version: '6.0.x'
       run: dotnet test
   publish:
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-dotnet@v3
       with:
